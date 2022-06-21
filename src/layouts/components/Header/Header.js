@@ -58,7 +58,7 @@ const MENU_ITEMS = [
 ];
 
 function Header() {
-  const currentUser = false;
+  const currentUser = true;
 
   // Handle Logic
   const handleMenuChange = (menuItem) => {
@@ -109,9 +109,11 @@ function Header() {
           {currentUser ? (
             <>
               <Tippy content="Upload video">
-                <button className={cx('action-btn')}>
-                  <UploadIcon />
-                </button>
+                <Link to={config.routes.upload}>
+                  <button className={cx('action-btn')}>
+                    <UploadIcon />
+                  </button>
+                </Link>
               </Tippy>
               <Tippy content="Message">
                 <button className={cx('action-btn')}>
